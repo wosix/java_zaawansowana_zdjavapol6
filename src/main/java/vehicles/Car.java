@@ -2,9 +2,14 @@ package vehicles;
 
 public class Car extends Vehicle {
     int passengers;
+    double velocity;
 
-    public Car() {
-        System.out.println("Empty Car constructor.");
+    public Car(){
+    }
+
+    public Car(double velocity) {
+        this.velocity = velocity;
+//        System.out.println("Empty Car constructor.");
     }
 
     @Override
@@ -13,6 +18,10 @@ public class Car extends Vehicle {
     }
 
     public void addPassenger() {
+        if (passengers == 4){
+            return;
+        }
+
         ++passengers;
         System.out.println("Added passenger. Current number " + passengers + ".");
     }
@@ -30,6 +39,7 @@ public class Car extends Vehicle {
     public String toString() {
         return "Car{" +
                 "passengers=" + passengers +
+                "; speed="+ velocity +
                 '}';
     }
 }

@@ -12,6 +12,21 @@ public class StringOperationApp {
         System.out.println(stringOperation.modify("karol"));
 
         stringOperation = new TextDuplicate();
+        System.out.println(stringOperation.modify("jan"));
+
+        stringOperation = new RemoveALetters();
+        System.out.println(stringOperation.modify("janek i karolek  AAA"));
+
+        stringOperation = new TextTruncate(5);
+        System.out.println(stringOperation.modify("hej boli mnie glowa"));
+        System.out.println(stringOperation.modify(""));
+        System.out.println(stringOperation.modify("hej"));
+
+        stringOperation = new TextReverse();
+        System.out.println(stringOperation.modify("Pomocy"));
+
+        stringOperation = new TextCensor(new String[]{"mnie", "działa"});
+        System.out.println(stringOperation.modify("U mnie to działa."));
     }
 
 

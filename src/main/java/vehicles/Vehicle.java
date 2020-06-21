@@ -1,17 +1,22 @@
 package vehicles;
 
 public class Vehicle {
+    protected double velocity;
 
-    public Vehicle(){
-        System.out.println("Empty Vehicle constructor.");
+    public Vehicle() {
+        velocity = 0;
     }
 
-    public void run(double velocity){
+    public Vehicle(double velocity) {
+        this.velocity = velocity;
+    }
+
+    public void run(double velocity) {
         System.out.println("Vehicle running at speed " + velocity + ".");
     }
 
     @Override
     public String toString() {
-        return "Vehicle{}";
+        return "Vehicle{speed=" + velocity + "}";
     }
 }
