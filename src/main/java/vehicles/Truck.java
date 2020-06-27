@@ -23,6 +23,6 @@ public class Truck extends Vehicle{
         if (velocity > 80){
             return;
         }
-        run(velocity); // :(((
+        //run(velocity); // :(((
     }
 }

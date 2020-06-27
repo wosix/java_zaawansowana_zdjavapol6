@@ -1,23 +1,32 @@
 package examples;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class CollectionExamples {
     public static void main(String[] args) {
 
-        List<String> textList = new ArrayList<>();
+        Map<String, Person> people = new HashMap<>();
+        people.put("1", new Person("wojtek", "adamix", LocalDate.now()));
+        people.put("2", new Person("janek", "wosix", LocalDate.of(2001, 7, 11)));
 
-        textList.add("ala");
-        textList.add("ma");
-        textList.add("kota");
-
-        for(String text : textList){
-            System.out.println(text);
+        Set<Map.Entry<String, Person>> elements = people.entrySet();
+        for (Map.Entry<String, Person> element : elements) {
+            String key = element.getKey();
+            Person value = element.getValue();
+            System.out.println("#" + key + ": " + value);
         }
 
 
-        Map<String, String> phoneBook = new HashMap<>();
-        phoneBook.put("ktos tam","1356");
-        phoneBook.put("ktos inny","2453");
+        people.put("1", new Person("Wojciech", "adamix", LocalDate.now()));
+
+        for (Map.Entry<String, Person> element : elements) {
+            String key = element.getKey();
+            Person value = element.getValue();
+            System.out.println("#" + key + ": " + value);
+        }
+
+
+        System.out.println(people.get(1).hashCode());
     }
 }
