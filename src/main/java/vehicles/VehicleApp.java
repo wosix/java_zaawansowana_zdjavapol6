@@ -34,6 +34,10 @@ public class VehicleApp {
 
         truck.run(66);
         truck.addPackages();
+        System.out.println("----------");
 
+        Road<Car> carRoad = new Road<>();
+        carRoad.addVehicle(car);
+        System.out.println(carRoad);
     }
 }

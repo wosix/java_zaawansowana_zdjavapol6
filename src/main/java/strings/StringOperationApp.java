@@ -25,8 +25,9 @@ public class StringOperationApp {
         stringOperation = new TextReverse();
         System.out.println(stringOperation.modify("Pomocy"));
 
-        stringOperation = new TextCensor(new String[]{"mnie", "działa"});
+        stringOperation = new TextCensor(new String[]{"mnie", "działa", "czemu"});
         System.out.println(stringOperation.modify("U mnie to działa."));
+        System.out.println(stringOperation.modify("U mNiE tO dZiałA."));
     }
 
 
