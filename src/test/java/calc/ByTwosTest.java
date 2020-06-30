@@ -1,6 +1,8 @@
 package calc;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ByTwosTest {
@@ -8,24 +10,35 @@ public class ByTwosTest {
     ByTwos byTwos;
     int a;
 
+    @BeforeEach
+    public void setUp() {
+        byTwos = new ByTwos();
+    }
+
     @Test
     public void byTwos() {
-        a = 0;
+        this.a = a;
+    }
+
+    @Test
+    public void setStart() {
+        byTwos.setStart(19);
+        assertEquals(19,byTwos.getStart());
     }
 
     @Test
     public void getNext() {
-        assertEquals(2,byTwos.getNext());
+        byTwos.setStart(6);
+        assertEquals(8, byTwos.getNext());
+        assertEquals(10, byTwos.getNext());
+        assertEquals(12, byTwos.getNext());
     }
 
     @Test
     public void reset() {
-        //assertEquals(0,byTwos.reset());
-    }
-
-    @Test
-    public void setStart(int x) {
-        byTwos.setStart(4);
-        assertEquals(4,a);
+        byTwos.setStart(18);
+        byTwos.getNext();
+        byTwos.getNext();
+        assertEquals(18,byTwos.getStart());
     }
 }

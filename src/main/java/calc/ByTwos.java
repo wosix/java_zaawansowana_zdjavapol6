@@ -21,4 +21,8 @@ public class ByTwos implements Series {
         start = x;
         a = x;
     }
+
+    public int getStart() {
+        return start;
+    }
 }
